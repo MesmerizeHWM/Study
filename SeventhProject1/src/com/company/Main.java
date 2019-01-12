@@ -4,22 +4,22 @@ public class Main {
 
     public static void main(String[] args) {
         String a = "01234567891";
-        if (checkForNumbers(a)) {
+        if (isNumber(a)) {
             System.out.println("Только одни цифры");
         } else {
             System.out.println("Печалька");
         }
     }
 
-    private static boolean checkForNumbers(String a) {
-        boolean tmp1 = true;
+    private static boolean isNumber(String a) {
+        boolean isNumber = true;
         for (int i = 0; i < a.length(); i++) {
             if (a.codePointAt(i) < 48 || a.codePointAt(i) > 57) {
-                tmp1 = false;
+                isNumber = false;
                 break;
             }
         }
-        return tmp1;
+        return isNumber;
     }
 }
 

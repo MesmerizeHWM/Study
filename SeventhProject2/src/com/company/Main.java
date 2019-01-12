@@ -47,7 +47,7 @@ public class Main {
                 }
             }
         }
-        System.out.println(timePrint);
+        System.out.println(timePrint.trim());
     }
 
     private static int inputTimeInSeconds() {
