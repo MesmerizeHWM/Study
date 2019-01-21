@@ -7,25 +7,31 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-	    StringList numberOfLines = new StringList();
-	    StringList numberOfStrings = new StringList();
+	    StringList linesFromFile = new StringList();
 
         FileReader fr = new FileReader("C:\\Users\\Stas\\IdeaProjects\\EighthProject2\\Test.txt");
         Scanner scannerLine = new Scanner(fr);
 
         while (scannerLine.hasNextLine()) {
-            numberOfLines.add(scannerLine.nextLine());
+            linesFromFile.add(scannerLine.nextLine());
         }
-        System.out.println("Number of lines" + numberOfLines.size());
+        System.out.println("Number of lines: " + linesFromFile.size());
         scannerLine.close();
 
-        Scanner scannerString = new Scanner(fr);
-        scannerString.useDelimiter(" ");
-        while (scannerString.hasNext()) {
-            numberOfStrings.add(scannerString.next());
+        int numberOfWords = 0;
+        for (int i = 0; i < linesFromFile.size(); i++) {
+            for (String retval : linesFromFile.get(i).split(" ")) {
+                numberOfWords++;
+            }
         }
-        System.out.println("Number of strings" + numberOfStrings.size());
-        scannerString.close();
+        System.out.println("Number of words: " + numberOfWords);
+
+        int numberOfChars = 0;
+
+        for (int i = 0; i < linesFromFile.size(); i++) {
+            numberOfChars += linesFromFile.get(i).length();
+        }
+        System.out.println("Number of chars: " + numberOfChars);
 
     }
 }
