@@ -12,7 +12,13 @@ public class Main {
         Fruit lemon = new Fruit(Fruit.Type.LEMON, Fruit.Color.YELLOW, 200, 32.79);
         Fruit banana = new Fruit(Fruit.Type.BANANA, Fruit.Color.YELLOW, 198, 17.99);
 
-        double sum = redApple.countPrice() + greenApple.countPrice() + lemon.countPrice() + banana.countPrice();
+        Fruit[] fruits = {redApple, greenApple, lemon, banana};
+
+        double sum = 0;
+        for (int i = 0; i < fruits.length; i++) {
+            sum += fruits[i].countPrice();
+        }
+
         System.out.println("Сумма чека: " + format(Locale.US, "%.2f", sum));
     }
 }
