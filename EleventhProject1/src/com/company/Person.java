@@ -5,7 +5,7 @@ public class Person {
     private String lastName;
     private int age;
     private double weight;
-    private double height;
+    private int height;
 
     public Person(String firstName, String lastName) {
         this.firstName = firstName;
@@ -20,8 +20,16 @@ public class Person {
         this.weight = weight;
     }
 
-    public void setHeight(double height) {
+    public void setHeight(int height) {
         this.height = height;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getFirstName() {
@@ -42,5 +50,16 @@ public class Person {
 
     public double getHeight() {
         return height;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", weight=" + weight + " кг" +
+                ", height=" + height + " см" +
+                '}';
     }
 }
